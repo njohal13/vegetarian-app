@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is where your description goes" />
+    <meta name="keywords" content="one, two, three" />
+
+    <title>Vegetarian App</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="all">
+      <section class="container">
+        <h1>Is it Vegetarian</h1>
+        <input
+          class="input"
+          type="number"
+          id="barcode"
+          name="barcode"
+          value=""
+          placeholder="Enter Barcode "
+        />
+        <button class="button" type="button" name="button">Check</button>
+      </section>
+      <section class="bothcolumns">
+        <section class="container1">
+          <h2 id="product-name"></h2>
+          <img id="product-image" src="" alt="" />
+        </section>
+
+        <section class="container2">
+          <div class="measure">
+            <table id="ingredient-table">
+              <tr>
+                <th id="ingredient-column">Ingredient</th>
+                <th>Vegetarian?</th>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </section>
+    </section>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+  border-radius: 15px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(138, 177, 216);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.container h1 {
+  font-size: 35px;
+}
+
+.all {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-top: 10%;
+}
+.bothcolumns {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 2%;
+  margin-top: 40px;
+  background-color: rgba(255, 248, 220, 0.637);
+  width: 70%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.068);
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.button {
+  cursor: pointer;
+  outline: 0;
+  color: white;
+  background-color: #0b5ed7;
+  border-color: #0b5dd70e;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid;
+  padding: 6px 12px;
+  font-size: 20px;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.button:hover {
+  color: rgb(255, 255, 255);
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.068);
+}
+
+.input {
+  display: inline-block;
+  line-height: 1.5;
+  font-weight: 400;
+  padding: 6px 12px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #aec8ee;
+  border-radius: 0.25rem;
+  margin: 5px;
+}
+
+.input:hover {
+  border-color: #becee749;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.068);
+}
+
+.ingredients ul li,
+.measure ul li {
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+}
+
+table {
+  margin: 20px auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
