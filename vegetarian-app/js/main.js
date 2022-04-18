@@ -57,21 +57,38 @@ class ProductInfo {
     listIngredients() {
         let tableRef = document.getElementById("ingredient-table")
 
-        for(let key in this.ingredients){ // for each ingredient in the list of ingredients
-            //Add a new row with 2 cells
-            let newRow = tableRef.insertRow(-1) // -1 adds row below - to end of table
-            let newICell = newRow.insertCell(0) // inserts a cell at index 0 of new row
-            let newVCell = newRow.insertCell(1) // inserts a cell at index 1 of new row
-            //Place text in new cells
-            let newIText = document.createTextNode(
-                //Get the name of the ingredient which is in ingredients: text: "name"
-                this.ingredients[key].text  //[key] is basically like [i] in traditional loops
-            )
-            let vegStatus = this.ingredients[key].vegetarian
-            let newVText = document.createTextNode(vegStatus)
-            newICell.appendChild(newIText)
-            newVCell.appendChild(newVText)
-
+        //clear the table rows each time we search a dif product
+        for (let i=1; i < tableRef.rows.length;){ //i is always gonna be 1 (second row)
+            tableRef.deleteRow(i);
         }
+
+        if(!(this.ingredients == null)){
+            for(let key in this.ingredients){ // for each ingredient in the list of ingredients
+                //Add a new row with 2 cells
+                let newRow = tableRef.insertRow(-1) // -1 adds row below - to end of table
+                let newICell = newRow.insertCell(0) // inserts a cell at index 0 of new row
+                let newVCell = newRow.insertCell(1) // inserts a cell at index 1 of new row
+                //Place text in new cells
+                let newIText = document.createTextNode(
+                    //Get the name of the ingredient which is in ingredients: text: "name"
+                    this.ingredients[key].text  //[key] is basically like [i] in traditional loops
+                )
+                let vegStatus = this.ingredients[key].vegetarian == null ? 'unknown' : this.ingredients[key].vegetarian
+                let newVText = document.createTextNode(vegStatus)
+                newICell.appendChild(newIText)
+                newVCell.appendChild(newVText)
+
+                if (vegStatus === 'no') {
+                    //turn red
+                    newVCell.classList.add('non-veg-item')
+                }else if (vegStatus === 'unknown' || vegStatus === 'maybe'){
+                    //turn yellow
+                    newVCell.classList.add('unknown-maybe-item')
+                }
+                    
+            }
+        }
+
+        
     }
 }
