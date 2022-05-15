@@ -1,7 +1,7 @@
 //Get a food item name, photo, and ingredients and place them in the DOM
 // Nutella 009800895007
 
-//Get value out of input when press the button. name function getDrink
+//Get value out of input when press the button. name function getFood
 document.querySelector('button').addEventListener('click', getFood)
 
 //create the getDrink function
@@ -18,7 +18,7 @@ function getFood(){
         if (data.status === 1) { //if product is found. status is in the json
             //call additional stuff
             const item = new ProductInfo(data.product) //build a new object and call the constructor
-          //item.testCall()
+            //item.testCall()
             item.showInfo()
             item.listIngredients()
         }else if (data.status === 0) {
@@ -36,6 +36,8 @@ function getFood(){
     //console.log()
 
 }
+//On page-load, show default 
+getFood("009800895007")
 
 class ProductInfo {
     constructor(productData) { //Passin in data.product
@@ -52,8 +54,8 @@ class ProductInfo {
         document.getElementById("product-image").src = this.image
         document.getElementById("product-name").innerText = this.name
     }
-// Fill in the table rows
-// USe a for in loop which is for objects, loop through all items, no matter how many there are. Dont need to specify how many
+    // Fill in the table rows
+    // USe a for in loop which is for objects, loop through all items, no matter how many there are. Dont need to specify how many
     listIngredients() {
         let tableRef = document.getElementById("ingredient-table")
 
@@ -88,7 +90,6 @@ class ProductInfo {
                     
             }
         }
-
         
     }
 }
